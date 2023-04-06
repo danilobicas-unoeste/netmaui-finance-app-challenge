@@ -10,6 +10,12 @@ namespace FinanceApp.ViewModels
         async Task GoToDetails()
         {
             await Shell.Current.GoToAsync(nameof(RecentTransactionsView), true);
-        }     
+        }
+
+        [RelayCommand]
+        private void ShowMenuFoda()
+        {
+            Shell.Current.FlyoutIsPresented = true;
+        }
     }
 }

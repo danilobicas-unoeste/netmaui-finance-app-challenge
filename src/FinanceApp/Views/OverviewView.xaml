@@ -6,7 +6,8 @@
     xmlns:controls="clr-namespace:FinanceApp.Controls"
     Background="{StaticResource PageBackgroundColor}"
     Shell.NavBarIsVisible="False"
-    Title="Overview">
+    Title="Overview"
+    Shell.FlyoutItemIsVisible="True">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -99,17 +100,23 @@
             Style="{StaticResource OverviewBorderStyle}">
             <Border.Shadow>
                 <Shadow
-                    Radius="12"
-                    Opacity="0.15"
-                    Offset="6, 6"/>
+                    Radius="5"
+                    Opacity="0.50"
+                    Offset="6, 10"/>
             </Border.Shadow>
             <Grid
                 RowDefinitions="Auto, *, Auto">
                 <Grid
                     ColumnDefinitions="*, *">
+
                     <Image 
                         Source="menu_icon.png"
-                        Style="{StaticResource MenuIconStyle}"/>
+                        Style="{StaticResource MenuIconStyle}">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding ShowMenuFoda}" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Image 
                         Grid.Column="1" 
                         HorizontalOptions="End"
@@ -126,7 +133,7 @@
                         Background="{StaticResource AccentColor}"
                         Style="{StaticResource BannerIconStyle}">
                         <Image
-                            Source="main_face.png"/>
+                            Source="face05.png"/>
                     </Border>
                     <Label 
                         Grid.Row="1"
